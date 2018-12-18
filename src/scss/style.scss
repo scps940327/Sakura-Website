@@ -1,0 +1,56 @@
+@import "component/color.scss";
+@import "component/function.scss";
+@import "component/initial.scss";
+@import "component/public.scss";
+
+@import "component/custom.scss";
+
+@import "component/header.scss";
+@import "component/foot.scss";
+
+.banner{
+	background-color: $bg_color_banner;
+	text-align: center;
+
+	img{
+		max-width: 980px;
+	}
+}
+
+.section{
+	padding: 30px 5%;
+
+	.container{
+		max-width: $max_width;
+	}
+}
+
+.bg_pink{
+	background-color: $bg_color_pink;
+}
+
+.lg_title{
+	color: $main_color;
+	font-size: 40px;
+	font-weight: bold;
+  font-family: 'Noto Serif TC', serif;
+  padding-bottom: 10px;
+} 
+.md_title{
+	color: $main_color;
+	font-size: 18px;
+  font-weight: bolder;
+  padding-bottom: 20px;
+  padding-top: 10px;
+} 
+.tip_txt{
+	font-size: 15px;
+	color: #777;
+	line-height: 1.8em;
+}
+.detail_txt{
+	font-size: 16px;
+  color: #000;
+  line-height: 1.5em;
+  max-width: $max_width*0.5;
+}

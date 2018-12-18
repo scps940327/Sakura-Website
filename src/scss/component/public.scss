@@ -1,0 +1,124 @@
+@mixin txt_type($title_type: detail) {
+	@if $title_type == 'lg_title' {
+		color: $main_color;
+		font-size: 30px;
+		font-weight: bold;
+    font-family: 'Noto Serif TC', serif;
+	} 
+	@else if $title_type == 'md_title' {
+		color: $main_color;
+		font-size: 18px;
+    font-weight: bolder;
+    padding-bottom: 20px;
+    padding-top: 10px;
+	} 
+	@else if $title_type == 'tip' {
+		font-size: 15px;
+		color: #777;
+		line-height: 1.8em;
+	}
+	@else if $title_type == 'detail' {
+		font-size: 16px;
+    color: #000;
+    line-height: 1.5em;
+	}
+}
+
+.back_page{
+	padding: 30px 0;
+	@include font_rwd;
+}
+
+.back_top{
+	border-radius: 0;
+	background-color: rgba(0,0,0,0.5);
+	border: 1px #FFF solid;
+	opacity: 0.7;
+	z-index: 2;
+	padding: 7px 9px;
+	line-height: 1em;
+	font-size: 24px;
+	left: 0;
+	right: initial;
+}
+
+.mask{
+	background-color: rgba(255,255,255,0.85);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	display: none;
+}
+
+.menu_m_icon{
+	position: fixed;
+  right: 0;
+  margin: 0 5%;
+  bottom: 10%;
+  background-color: $fourth_color;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  color: #FFF;
+  font-size: 24px;
+  line-height: 1em;
+  padding: 10px 11px;
+  z-index: 3;
+
+  .fa-times{
+  	display: none;
+  }
+
+  &.active{
+  	padding: 10px 14px;
+
+  	.fa-ellipsis-h{
+  		display: none;
+  	}
+
+  	.fa-times{
+    	display: block;
+    }
+  }
+}
+
+.float_menu{
+	position: fixed;
+	right: calc(5% + 3px);
+	bottom: calc(15% + 20px);
+	text-align: right;
+	z-index: 3;
+	display: none;
+
+	li{
+		padding: 0 0 20px 0;
+	}
+
+	a{
+		display: inline-block;
+		vertical-align: middle;
+		width: 42px;
+		height: 42px;
+		text-align: center;
+		background-color: #777;
+		color: #FFF;
+		border-radius: 50%;
+		font-size: 20px;
+		line-height: 42px;
+		box-shadow: 0 0 4px rgba(0,0,0,0.5);
+	}
+
+	span{
+		display: inline-block;
+		vertical-align: middle;
+		padding: 3px 8px;
+		background-color: #FFF;
+		color: #000;
+		border-radius: 3px;
+		margin-right: 20px;
+		box-shadow: 0 0 4px rgba(0,0,0,0.5);
+	}
+}

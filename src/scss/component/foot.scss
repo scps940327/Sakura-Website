@@ -1,0 +1,35 @@
+.footer_rwd{
+	padding: 20px 5%;
+	text-align: center;
+	background-color: $third_color;
+
+	.copyright{
+		color: #FFF;
+		font-size: 14px;
+		padding: 15px 0;
+	}
+}
+
+.footer_link{
+	font-size: 0;
+
+	li{
+		@include inline_block($width_full/3);
+		padding: 0 5px;
+		text-align: center;
+
+		@include sm-width{
+			width: 50%;
+		}
+
+		&:nth-child(3){
+			@include sm-width{
+				display: none;
+			}
+		}
+	}
+
+	img{
+		max-width: 200px;
+	}
+}

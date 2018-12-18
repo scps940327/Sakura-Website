@@ -1,0 +1,144 @@
+.header_rwd{
+	top: -40px;
+	transition: top 0.7s;
+
+	&.fixed_top{
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 3;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+	}
+}
+
+.header_top{
+	background-color: $second_color; /* Old browsers */
+	background: -moz-linear-gradient(top, #e0afc5 0%, #dd75a4 3%, #d3568e 95%, #7c3b55 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #e0afc5 0%,#dd75a4 3%,#d3568e 95%,#7c3b55 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #e0afc5 0%,#dd75a4 3%,#d3568e 95%,#7c3b55 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0afc5', endColorstr='#7c3b55',GradientType=0 ); /* IE6-9 */
+	padding: 0 5%;
+	@include md-width{
+		font-size: 0;
+	}
+}
+
+.header_logo{
+	font-size: 0;
+	@include md-width{
+		@include inline_block(calc(100% - 400px));
+	}
+	@include sm-width{
+		padding: 15px 0;
+	}
+
+	.logo_1{
+		width: 180px;
+		margin-right: 20px;
+		padding: 5px 0;
+	}
+
+	.logo_2{
+		width: 140px;
+		vertical-align: middle;
+	}
+
+	div{
+		@include inline_block(calc(100% - 200px));
+	}
+
+	span{
+		color: #FFF;
+		font-size: 18px;
+		font-weight: bold;
+		vertical-align: middle;
+		@include md-width{
+			margin-right: 10px;
+		}
+		@include sm-width{
+			display: block;
+		}
+	}
+}
+
+.header_link{
+	@include inline_block(400px);
+	font-size: 16px;
+	@include sm-width{
+		display: none;
+	}
+
+	.svg-inline--fa{
+		margin-right: 5px;
+	}
+
+	li{
+		text-align: center;
+		color: #FFF;
+		@include inline_block(130px);
+
+		&:nth-child(1){
+			background-color: $fourth_color;
+
+			&:hover{
+				background-color: lighten($fourth_color, 5%);
+			}
+		}
+
+		&:nth-child(2){
+			background-color: $main_color;
+
+			&:hover{
+				background-color: lighten($main_color, 5%);
+			}
+		}
+
+		&:nth-child(3){
+			background-color: $third_color;
+
+			&:hover{
+				background-color: lighten($third_color, 5%);
+			}
+		}
+	}
+
+	a{
+		display: block;
+		padding: 30px 5px;
+		cursor: pointer;
+	}
+}
+
+// .header_menu{
+// 	font-size: 0;
+// 	background-color: $fourth_color;
+// 	padding: 15px 5%;
+// 	text-align: center;
+// 	@include sm-width{
+// 		padding: 10px 5%;
+// 	}
+
+// 	li{
+// 		@include inline_block($width_full/3);
+// 		max-width: 240px;
+// 		@include font_rwd;
+
+// 		&:nth-child(1){
+// 			a{
+// 				border-left: 1px #000 solid;
+// 			}
+// 		}
+// 	}
+
+// 	a{
+// 		display: block;
+// 		padding: 5px;
+// 		border-right: 1px #000 solid;
+// 		font-weight: bold;
+// 		cursor: pointer;
+// 		@include sm-width{
+// 			padding: 0 5px;
+// 		}
+// 	}
+// }
