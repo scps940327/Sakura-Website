@@ -30,13 +30,15 @@
 <body>
 <script>
 function slide_to(div_num){
-    if($('.page_mobilehome').length > 0){
-        var div_top = $('.mcol').children('div').eq(parseInt(div_num) - 1).offset().top - $('.header_rwd').height();
-        $("html,body").animate({'scrollTop': div_top},500);
-    }
-    else{
-        location.href="/m/home.php#Dyn_2_36";
-    }
+    // if($('.page_mobilehome').length > 0){
+    //     var div_top = $('.mcol').children('div').eq(parseInt(div_num) - 1).offset().top - $('.header_rwd').height();
+    //     $("html,body").animate({'scrollTop': div_top},500);
+    // }
+    // else{
+    //     location.href="/m/home.php#Dyn_2_36";
+    // }
+    var div_top = $('#postForm').offset().top - $('.header_rwd').height();
+    $("html,body").animate({'scrollTop': div_top},500);
 }
 function check_header_fixed(){
     if($(window).scrollTop() > 70){
@@ -106,7 +108,7 @@ $(window).scroll(function(event) {
           </div>
           <ul class="header_link hidden-xs">
             <li>
-              <a onclick="slide_to(36);">
+              <a onclick="slide_to();">
                 <i class="fas fa-chess"></i>
                 <span>預約賞屋</span>
               </a>
@@ -260,214 +262,216 @@ $(window).scroll(function(event) {
   <div id="Team"></div>
   <div id="Outer2"></div>
   <div id="HeathyFeature"></div>
-  <div class="section bg_banner py-5">
-    <div class="container border_bottom">
-      <div class="lg_title">櫻花學│建案資料</div>
-      <div class="detail_txt pt-3">
-        接待會館：三峽區弘園街28號<br>
-        貴賓專線：02-86722789<br>
-        坪數規劃：3-4房│39-47坪<br>
-        樓層規劃：家學區│地上13層/地下3層<br>
-        樓層規劃：博學區│地上13層/地下2層<br>
-        投資建設：櫻花建設（股票代號2539）<br>
-        建築規劃：蔡智勸建築師事務所<br>
-        建築營造：國城營造<br>
-        庭院景觀：邱光平│綠第景觀有限公司<br>
-        建照號碼：家學區│106峽建字第256號<br>
-        建照號碼：博學區│106峽建字第228號<br>
-        經紀人：石仁人<br>
-        行銷企劃：翰昌機構－翰永開發有限公司<br>
-      </div>
-    </div>
-    <div class="container py-5">
-      <div class="lg_title pb-3">預約鑑賞</div>
-      <div class="detail_txt py-3">*為必填</div>
-      <div class="postForm">
-        <div class="form-row">
-          <div class="col-md-6 py-2">
-            <input type="text" name="cname" id="cname" class="form-control" required placeholder="*姓名">
-          </div>
-          <div class="row col-md-6 py-2 no-gutters">
-            <div class="col-4 col-sm-3 col-lg-3 col-form-label">
-              <span class="text-danger">*</span>
-              <label>性別</label>
-            </div>
-            <div class="col-8 col-sm-7 col-lg-9 col-form-label">
-              <div class="form-check form-check-inline">
-                <input type="radio" name="cgender" id="cgender1" value="male" class="form-check-input">
-                <label for="cgender1" class="form-check-label">先生</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input type="radio" name="cgender" id="cgender2" value="female" class="form-check-input">
-                <label for="cgender2" class="form-check-label">小姐</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-6 py-2">
-            <select name="people_num" id="people_num" class="form-control" required>
-              <option value="">*選擇預約人數</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </div>
-          <div class="col-md-6 py-2">
-            <input type="tel" name="cphone" id="cphone" class="form-control" required placeholder="*手機">
-          </div>
-        </div>
-        <div class="form-group py-2">
-          <input type="email" name="cemail" id="cemail" class="form-control" required placeholder="*E-MAIL">
-        </div>
-        <div class="form-group py-2">
-          <textarea name="cmessage" id="cmessage" cols="20" class="form-control" placeholder="備註事項"></textarea>
-        </div>
-        <div class="form-group py-2">
-          <input type="text" name="code" id="code" class="form-control" placeholder="驗證碼">
-          <div id="v_container" style="width: 100px;height: 38px;"></div>
-        </div>
-        <div class="row pt-4" id="submitdiv">
-          <button class="btn btn-main w-100" type="button" onclick="javascript:SendScore();">送出預約資訊</button>
+  <div id="postForm">
+    <div class="section bg_banner py-5">
+      <div class="container border_bottom">
+        <div class="lg_title">櫻花學│建案資料</div>
+        <div class="detail_txt pt-3">
+          接待會館：三峽區弘園街28號<br>
+          貴賓專線：02-86722789<br>
+          坪數規劃：3-4房│39-47坪<br>
+          樓層規劃：家學區│地上13層/地下3層<br>
+          樓層規劃：博學區│地上13層/地下2層<br>
+          投資建設：櫻花建設（股票代號2539）<br>
+          建築規劃：蔡智勸建築師事務所<br>
+          建築營造：國城營造<br>
+          庭院景觀：邱光平│綠第景觀有限公司<br>
+          建照號碼：家學區│106峽建字第256號<br>
+          建照號碼：博學區│106峽建字第228號<br>
+          經紀人：石仁人<br>
+          行銷企劃：翰昌機構－翰永開發有限公司<br>
         </div>
       </div>
-      <script type="text/javascript">
-        utm_source = getParameter('utm_source');
-        utm_medium = getParameter('utm_medium');
-        utm_content = getParameter('utm_content');
-        utm_campaign = getParameter('utm_campaign');
-        cdate = formatDate(new Date());
+      <div class="container py-5">
+        <div class="lg_title pb-3">預約鑑賞</div>
+        <div class="detail_txt py-3">*為必填</div>
+        <div class="postForm">
+          <div class="form-row">
+            <div class="col-md-6 py-2">
+              <input type="text" name="cname" id="cname" class="form-control" required placeholder="*姓名">
+            </div>
+            <div class="row col-md-6 py-2 no-gutters">
+              <div class="col-4 col-sm-3 col-lg-3 col-form-label">
+                <span class="text-danger">*</span>
+                <label>性別</label>
+              </div>
+              <div class="col-8 col-sm-7 col-lg-9 col-form-label">
+                <div class="form-check form-check-inline">
+                  <input type="radio" name="cgender" id="cgender1" value="male" class="form-check-input">
+                  <label for="cgender1" class="form-check-label">先生</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" name="cgender" id="cgender2" value="female" class="form-check-input">
+                  <label for="cgender2" class="form-check-label">小姐</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 py-2">
+              <select name="people_num" id="people_num" class="form-control" required>
+                <option value="">*選擇預約人數</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+            <div class="col-md-6 py-2">
+              <input type="tel" name="cphone" id="cphone" class="form-control" required placeholder="*手機">
+            </div>
+          </div>
+          <div class="form-group py-2">
+            <input type="email" name="cemail" id="cemail" class="form-control" required placeholder="*E-MAIL">
+          </div>
+          <div class="form-group py-2">
+            <textarea name="cmessage" id="cmessage" cols="20" class="form-control" placeholder="備註事項"></textarea>
+          </div>
+          <div class="form-group py-2">
+            <input type="text" name="code" id="code" class="form-control" placeholder="驗證碼">
+            <div id="v_container" style="width: 100px;height: 38px;"></div>
+          </div>
+          <div class="row pt-4" id="submitdiv">
+            <button class="btn btn-main w-100" type="button" onclick="javascript:SendScore();">送出預約資訊</button>
+          </div>
+        </div>
+        <script type="text/javascript">
+          utm_source = getParameter('utm_source');
+          utm_medium = getParameter('utm_medium');
+          utm_content = getParameter('utm_content');
+          utm_campaign = getParameter('utm_campaign');
+          cdate = formatDate(new Date());
 
-        var verifyCode = new GVerify("v_container"),
-        re_tel = /[0-9]{10}$/,
-        re_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        
-        function SendScore(){
-          if(document.getElementById("cname").value==""){
-            //document.getElementById("namemsg").innerHTML="尚未填寫";
-            alert('請確認姓名欄位！');
-          }else if(document.querySelector('input[name="cgender"]:checked') == null){
-            alert('請確認性別欄位！');
-          }else if(document.getElementById("people_num").value==""){
-            alert('請確認人數欄位！');
-          }else if(document.getElementById("cphone").value==""){
-            //document.getElementById("phonemsg").innerHTML="尚未填寫";
-            alert('請確認手機欄位！');
-          }else if(!(re_tel.test(document.getElementById("cphone").value))){
-            alert("手機號碼有誤，請輸入數字即可");
-          }else if(document.getElementById("cemail").value==""){
-            alert('請確認信箱欄位！');
-          }else if(!(re_email.test(document.getElementById("cemail").value))){
-            alert('請確認信箱的格式！');
-          }else if(!document.getElementById("code").value){
-            alert('請填入驗證碼！');
-          }else if(!verifyCode.validate(document.getElementById("code").value)){
-            alert('驗證碼錯誤！');
-          }else{
-            document.getElementById("submitdiv").innerHTML="<button class='btn btn-primary w-100' type='botton'>資料傳送中...</button>";
-            jQuery.get("https://script.google.com/macros/s/AKfycbz7ZJSSQaEUx_RPaGSbJtBkDNSurmet1GMRv3NT020_bcOehk4/exec",{
-              "name":document.getElementById("cname").value,
-              "gender":document.querySelector('input[name="cgender"]:checked').value,
-              "phone":document.getElementById("cphone").value,
-              "email":document.getElementById("cemail").value,
-              "people_num":document.getElementById("people_num").value,
-              "message":document.getElementById("cmessage").value,
-              "utm_source":utm_source,
-              "utm_medium":utm_medium,
-              "utm_content":utm_content,
-              "utm_campaign":utm_campaign,
-              "date":cdate
-            },
-            function (data) {
-                alert('預約完成!');
-                document.location.href = "index.html";
-            });
+          var verifyCode = new GVerify("v_container"),
+          re_tel = /[0-9]{10}$/,
+          re_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          
+          function SendScore(){
+            if(document.getElementById("cname").value==""){
+              //document.getElementById("namemsg").innerHTML="尚未填寫";
+              alert('請確認姓名欄位！');
+            }else if(document.querySelector('input[name="cgender"]:checked') == null){
+              alert('請確認性別欄位！');
+            }else if(document.getElementById("people_num").value==""){
+              alert('請確認人數欄位！');
+            }else if(document.getElementById("cphone").value==""){
+              //document.getElementById("phonemsg").innerHTML="尚未填寫";
+              alert('請確認手機欄位！');
+            }else if(!(re_tel.test(document.getElementById("cphone").value))){
+              alert("手機號碼有誤，請輸入數字即可");
+            }else if(document.getElementById("cemail").value==""){
+              alert('請確認信箱欄位！');
+            }else if(!(re_email.test(document.getElementById("cemail").value))){
+              alert('請確認信箱的格式！');
+            }else if(!document.getElementById("code").value){
+              alert('請填入驗證碼！');
+            }else if(!verifyCode.validate(document.getElementById("code").value)){
+              alert('驗證碼錯誤！');
+            }else{
+              document.getElementById("submitdiv").innerHTML="<button class='btn btn-primary w-100' type='botton'>資料傳送中...</button>";
+              jQuery.get("https://script.google.com/macros/s/AKfycbz7ZJSSQaEUx_RPaGSbJtBkDNSurmet1GMRv3NT020_bcOehk4/exec",{
+                "name":document.getElementById("cname").value,
+                "gender":document.querySelector('input[name="cgender"]:checked').value,
+                "phone":document.getElementById("cphone").value,
+                "email":document.getElementById("cemail").value,
+                "people_num":document.getElementById("people_num").value,
+                "message":document.getElementById("cmessage").value,
+                "utm_source":utm_source,
+                "utm_medium":utm_medium,
+                "utm_content":utm_content,
+                "utm_campaign":utm_campaign,
+                "date":cdate
+              },
+              function (data) {
+                  alert('預約完成!');
+                  document.location.href = "index.html";
+              });
+            }
           }
-        }
 
-        function getParameter(name) {
-          name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-          var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-          results = regex.exec(location.search);
-          return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
+          function getParameter(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+          }
 
-        function formatDate(date) {
-          var day = date.getDate();
-          var monthIndex = date.getMonth()+1;
-          var year = date.getFullYear();
+          function formatDate(date) {
+            var day = date.getDate();
+            var monthIndex = date.getMonth()+1;
+            var year = date.getFullYear();
 
-          return year + '/' + monthIndex + '/' + day;
-        }
+            return year + '/' + monthIndex + '/' + day;
+          }
 
-        //alert(formatDate(new Date()));
-      </script>
-      <div class="row pt-4">
-        <div class="col-6 col-sm-6">
-          <small>送出前請先確認詳閱《隱私聲明條款》，送出表單即代表您同意隱私條款</small>
+          //alert(formatDate(new Date()));
+        </script>
+        <div class="row pt-4">
+          <div class="col-6 col-sm-6">
+            <small>送出前請先確認詳閱《隱私聲明條款》，送出表單即代表您同意隱私條款</small>
+          </div>
+          <div class="col-6 col-sm-6 text-right text-main">
+            <a data-toggle="modal" data-target="#TermsModal" style="cursor: pointer;">隱私聲明</a>
+          </div>
         </div>
-        <div class="col-6 col-sm-6 text-right text-main">
-          <a data-toggle="modal" data-target="#TermsModal" style="cursor: pointer;">隱私聲明</a>
-        </div>
-      </div>
-      <!-- Modal -->
-      <div class="modal fade" id="TermsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title mt-0" id="exampleModalLabel">隱私權政策</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="width: auto;">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>櫻花學股份有限公司（下稱「本公司」）為了使您瞭解本公司對於個人資料的保護與尊重以及我們將如何利用您的個人資料，特別制定隱私權政策。</p>
-              <br>
-              <p>一、個人資料之蒐集目的與類別</p>
-              <p>　●本公司將因您購買本公司相關產品或使用本公司透過電話、網站、人員或其他方式所提供的服務、於本公司留言板留言、或加入本公司徵才活動，而取得您的個人資料；基於對當事人權益的尊重，本公司將不會以不合理或不合法的方式蒐集、取得您的個人資料。<br>
-              　●為了提供您全方位的會員訊息及售後服務，我們將會依服務內容請您提供以下的個人資料，包括： 
-              基本資料：包括姓名、出生年月日、身分證統一編號、電話、地址及電子郵件信箱等資料。（Ｃ○○一 辨識個人者） <br>
-              　●當您使用公司留言板時，為了更進一步瞭解您的問題與需求，以及便於和您聯絡，我們將會請您提供您的個人基本資料，包括姓名、出生年月日、身分證統一編號、電話、地址及電子郵件信箱等。<br>
-              　●當您使用本公司電話、網站、人員或其他方式所提供的服務，為了提供您全方位的服務、優惠資訊或行銷訊息，我們將會請您提供的您的基本個人資料，包括姓名、出生年月日、身分證統一編號、電話、地址及電子郵件信箱等。<br>
-              （Ｃ○○一 辨識個人者） <br>
-              　●當您使用公司留言板時，為了更進一步瞭解您的問題與需求，以及便於和您聯絡，我們將會請您提供您的個人基本資料，包括姓名、出生年月日、身分證統一編號、電話、地址及電子郵件信箱等。 <br>
-              　●當您使用本公司電話、網站、人員或其他方式所提供的服務，為了提供您全方位的服務、優惠資訊或行銷訊息，我們將會請您提供的您的基本個人資料，包括姓名、出生年月日、身分證統一編號、電話、地址及電子郵件信箱等。 </p>
-              <br><br>
-              <p>二、個人資料利用之期間、地區、對象及方式</p>
-              <p>　●我們將依照您提供個人資料予本公司之目的處理或利用您的個人資料，除非取得您的書面同意、依法律規定或為契約履行之緣故，本公司絕不會將您的個人資料作其他用途使用。 <br>
-              　●就您個人資料的利用期間，本公司將依照相關法令規定，以及您與本公司往來之契約或書面約定辦理。 <br>
-              　●您的個人資料將使用於中華民國領域內，或因業務需要，在符合本公司所定之資訊安全標準的情況下傳輸至其他國家，惟國際傳輸之作業，將會依照我國及接受國之法規規範辦理。 <br>
-              　●您的個人資料，本公司將依照個人資料保護法、個人資料保護法施行細則等一切相關法令規定，以及您與本公司往來之契約或書面約定辦理。除法律規定、委任第三人處理營業相關事務，或與您的往來契約或書面文件另有約定，而須揭露您的個人資料予第三人外，將不會向任何其他第三人揭露或供其使用。 <br>
-              　●公務機關因公共利益或法律規定，要求本公司公開特定個人資料時，本公司將視公務機關合法正式的程序，以及對本公司所有使用者安全之考量下，做可能必要的配合。 </p>
-              <br><br>
-              <p>三、個人資料之安全維護</p>
-              <p>　●您的個人資料會被安全地保存在本公司的資料庫系統或管制區域中。同時，任何人均須在本公司訂定之資料授權管理規範下，進行資料之取得與使用，而不在授權範圍內之任何人，均不得亦無法取得資料。<br>
-              　●對您提供之個人資料，本公司將依法定保存期限為妥當之保護，避免遺失或未經授權之使用、刪除、修改、再處理或公開。<br>
-              　●本公司以符合法規規範之實體、電子、流程安全標準來處理您的個人資料。本公司並訓練員工，以適當的處理方式來處理您的個人資料。當本公司委由其他公司提供服務時，亦會要求該公司對因此所取得之個人資料予以保密、保護，並符合一切法規規範。 </p>
-              <br><br>
-              <p>四、當事人權利行使方式與申訴管道</p>
-              <p>　●當您使用本公司網站所提供的服務或透過本公司網站加入徵才活動，您可以透過本公司網站於登入後查詢、閱覽或修正您的個人資料。除此之外，您也可以於週一至週五9:00-17:30，撥打本公司服務專線04 2382 2580，要求查詢或請求、閱覽您的個人資料或製給複製本、補充或更正、要求停止蒐集、處理或利用、或刪除您的個人資料，本公司將由專人竭誠為您服務。 <br>
-              　●如果您不願意再收到本公司以網路、電話、人員或其他方式所提供的行銷訊息或優惠訊息，您可以於週一至週五9:00-17:30，撥打本公司服務專線04 2382 2580，本公司將會立即依您的通知內容停止使用您的資料。 <br>
-              　●當您使用本公司網站查詢、閱覽或修正您的個人資料，如有發生任何操作問題或其他問題，或對於本公司處理您所提出之個人資料處理請求有不滿意或其他困擾時，您可以於週一至週五9:00-17:30，撥打本公司服務專線04 2382 2580，本公司將由專人竭誠為您服務。 </p>
-              <br><br>
-              <p>五、客戶拒絕提供個人資料之權益影響</p>
-              <p>　如果您不願意將您的個人資料予提供給本公司，將會影響到您取得本公司產品或服務之完整性。<br>
-              <br><br>
-              <p>六、官方網站之技術細節</p>
-              <p>　本網站使用"cookies"收集關於網頁流量及使用形態的資料，但cookies並不會截取您的姓名、電子郵件位址或類似的個人資料。</p>
-              <br><br>
-              <p>七、其他注意事項</p>
-              <p>　請您注意，與本網站連結的其它網站，也可能蒐集您的個人資料。對於您主動提供的個人資訊，這些連結網站有其個別的隱私權政策，除與本公司有委託關係者外，其資料處理措施不適用於本公司隱私權政策，本公司依法也無須負任何連帶責任。
-              本隱私權政策自2018 年4月01日起開始生效，惟為因應社會環境及法令的變遷與科技的進步，並為保護客戶隱私，本公司有權隨時修改本公告政策，並將儘速於更新後公告或通知。</p>
-            </div>
-            <div class="modal-footer">
+        <!-- Modal -->
+        <div class="modal fade" id="TermsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title mt-0" id="exampleModalLabel">隱私權政策</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="width: auto;">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>櫻花學股份有限公司（下稱「本公司」）為了使您瞭解本公司對於個人資料的保護與尊重以及我們將如何利用您的個人資料，特別制定隱私權政策。</p>
+                <br>
+                <p>一、個人資料之蒐集目的與類別</p>
+                <p>　●本公司將因您購買本公司相關產品或使用本公司透過電話、網站、人員或其他方式所提供的服務、於本公司留言板留言、或加入本公司徵才活動，而取得您的個人資料；基於對當事人權益的尊重，本公司將不會以不合理或不合法的方式蒐集、取得您的個人資料。<br>
+                　●為了提供您全方位的會員訊息及售後服務，我們將會依服務內容請您提供以下的個人資料，包括： 
+                基本資料：包括姓名、出生年月日、身分證統一編號、電話、地址及電子郵件信箱等資料。（Ｃ○○一 辨識個人者） <br>
+                　●當您使用公司留言板時，為了更進一步瞭解您的問題與需求，以及便於和您聯絡，我們將會請您提供您的個人基本資料，包括姓名、出生年月日、身分證統一編號、電話、地址及電子郵件信箱等。<br>
+                　●當您使用本公司電話、網站、人員或其他方式所提供的服務，為了提供您全方位的服務、優惠資訊或行銷訊息，我們將會請您提供的您的基本個人資料，包括姓名、出生年月日、身分證統一編號、電話、地址及電子郵件信箱等。<br>
+                （Ｃ○○一 辨識個人者） <br>
+                　●當您使用公司留言板時，為了更進一步瞭解您的問題與需求，以及便於和您聯絡，我們將會請您提供您的個人基本資料，包括姓名、出生年月日、身分證統一編號、電話、地址及電子郵件信箱等。 <br>
+                　●當您使用本公司電話、網站、人員或其他方式所提供的服務，為了提供您全方位的服務、優惠資訊或行銷訊息，我們將會請您提供的您的基本個人資料，包括姓名、出生年月日、身分證統一編號、電話、地址及電子郵件信箱等。 </p>
+                <br><br>
+                <p>二、個人資料利用之期間、地區、對象及方式</p>
+                <p>　●我們將依照您提供個人資料予本公司之目的處理或利用您的個人資料，除非取得您的書面同意、依法律規定或為契約履行之緣故，本公司絕不會將您的個人資料作其他用途使用。 <br>
+                　●就您個人資料的利用期間，本公司將依照相關法令規定，以及您與本公司往來之契約或書面約定辦理。 <br>
+                　●您的個人資料將使用於中華民國領域內，或因業務需要，在符合本公司所定之資訊安全標準的情況下傳輸至其他國家，惟國際傳輸之作業，將會依照我國及接受國之法規規範辦理。 <br>
+                　●您的個人資料，本公司將依照個人資料保護法、個人資料保護法施行細則等一切相關法令規定，以及您與本公司往來之契約或書面約定辦理。除法律規定、委任第三人處理營業相關事務，或與您的往來契約或書面文件另有約定，而須揭露您的個人資料予第三人外，將不會向任何其他第三人揭露或供其使用。 <br>
+                　●公務機關因公共利益或法律規定，要求本公司公開特定個人資料時，本公司將視公務機關合法正式的程序，以及對本公司所有使用者安全之考量下，做可能必要的配合。 </p>
+                <br><br>
+                <p>三、個人資料之安全維護</p>
+                <p>　●您的個人資料會被安全地保存在本公司的資料庫系統或管制區域中。同時，任何人均須在本公司訂定之資料授權管理規範下，進行資料之取得與使用，而不在授權範圍內之任何人，均不得亦無法取得資料。<br>
+                　●對您提供之個人資料，本公司將依法定保存期限為妥當之保護，避免遺失或未經授權之使用、刪除、修改、再處理或公開。<br>
+                　●本公司以符合法規規範之實體、電子、流程安全標準來處理您的個人資料。本公司並訓練員工，以適當的處理方式來處理您的個人資料。當本公司委由其他公司提供服務時，亦會要求該公司對因此所取得之個人資料予以保密、保護，並符合一切法規規範。 </p>
+                <br><br>
+                <p>四、當事人權利行使方式與申訴管道</p>
+                <p>　●當您使用本公司網站所提供的服務或透過本公司網站加入徵才活動，您可以透過本公司網站於登入後查詢、閱覽或修正您的個人資料。除此之外，您也可以於週一至週五9:00-17:30，撥打本公司服務專線04 2382 2580，要求查詢或請求、閱覽您的個人資料或製給複製本、補充或更正、要求停止蒐集、處理或利用、或刪除您的個人資料，本公司將由專人竭誠為您服務。 <br>
+                　●如果您不願意再收到本公司以網路、電話、人員或其他方式所提供的行銷訊息或優惠訊息，您可以於週一至週五9:00-17:30，撥打本公司服務專線04 2382 2580，本公司將會立即依您的通知內容停止使用您的資料。 <br>
+                　●當您使用本公司網站查詢、閱覽或修正您的個人資料，如有發生任何操作問題或其他問題，或對於本公司處理您所提出之個人資料處理請求有不滿意或其他困擾時，您可以於週一至週五9:00-17:30，撥打本公司服務專線04 2382 2580，本公司將由專人竭誠為您服務。 </p>
+                <br><br>
+                <p>五、客戶拒絕提供個人資料之權益影響</p>
+                <p>　如果您不願意將您的個人資料予提供給本公司，將會影響到您取得本公司產品或服務之完整性。</p>
+                <br><br>
+                <p>六、官方網站之技術細節</p>
+                <p>　本網站使用"cookies"收集關於網頁流量及使用形態的資料，但cookies並不會截取您的姓名、電子郵件位址或類似的個人資料。</p>
+                <br><br>
+                <p>七、其他注意事項</p>
+                <p>　請您注意，與本網站連結的其它網站，也可能蒐集您的個人資料。對於您主動提供的個人資訊，這些連結網站有其個別的隱私權政策，除與本公司有委託關係者外，其資料處理措施不適用於本公司隱私權政策，本公司依法也無須負任何連帶責任。
+                本隱私權政策自2018 年4月01日起開始生效，惟為因應社會環境及法令的變遷與科技的進步，並為保護客戶隱私，本公司有權隨時修改本公告政策，並將儘速於更新後公告或通知。</p>
+              </div>
+              <div class="modal-footer">
+              </div>
             </div>
           </div>
         </div>

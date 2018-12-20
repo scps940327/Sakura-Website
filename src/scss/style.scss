@@ -8,6 +8,11 @@
 @import "component/header.scss";
 @import "component/foot.scss";
 
+body{
+	background-size: 100% auto;
+  background-image: url('../../dist/img/sakura_bg_01.png');
+}
+
 .fotorama__nav{
 	text-align: left;
 }
