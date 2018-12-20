@@ -30,6 +30,11 @@
 }
 
 .back_top{
+  display: inline-block;
+  position: fixed;
+  margin: 0 5%;
+  cursor: pointer;
+  color: #FFF;
 	border-radius: 0;
 	background-color: rgba(0,0,0,0.5);
 	border: 1px #FFF solid;
@@ -39,7 +44,7 @@
 	line-height: 1em;
 	font-size: 24px;
 	left: 0;
-	right: initial;
+	bottom: 10%;
 }
 
 .mask{

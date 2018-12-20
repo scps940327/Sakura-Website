@@ -8,6 +8,14 @@
 @import "component/header.scss";
 @import "component/foot.scss";
 
+.fotorama__nav{
+	text-align: left;
+}
+
+.img-fluid{
+	width: 100%;
+}
+
 .banner{
 	background-color: $bg_color_banner;
 	text-align: center;
@@ -22,35 +30,96 @@
 
 	.container{
 		max-width: $max_width;
+		padding-left: 0;
+		padding-right: 0;
 	}
+}
+
+.bg_banner{
+	background-color: $bg_color_banner;
 }
 
 .bg_pink{
 	background-color: $bg_color_pink;
 }
 
+.bg_green{
+	background-color: $bg_color_green;
+}
+
 .lg_title{
 	color: $main_color;
 	font-size: 40px;
-	font-weight: bold;
+	font-weight: 900;
   font-family: 'Noto Serif TC', serif;
   padding-bottom: 10px;
 } 
 .md_title{
 	color: $main_color;
-	font-size: 18px;
-  font-weight: bolder;
-  padding-bottom: 20px;
+	font-size: 24px;
+  font-weight: 800;
+  padding-bottom: 10px;
   padding-top: 10px;
+  font-family: 'Noto Serif TC', serif;
 } 
 .tip_txt{
-	font-size: 15px;
-	color: #777;
-	line-height: 1.8em;
+	color: $main_color;
+  font-size: 18px;
+  font-weight: bolder;
+  padding-bottom: 20px;
 }
+
 .detail_txt{
 	font-size: 16px;
   color: #000;
   line-height: 1.5em;
   max-width: $max_width*0.5;
+}
+
+.img_block{
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.txt_block{
+	padding-bottom: 30px;
+}
+
+.border_bottom{
+	padding-bottom: 30px;
+	border-bottom: 1px #CCC solid;
+}
+
+#HeathyFeature{
+	background-image: url('../../dist/img/bg_01.jpg');
+	@include bg_img;
+
+	.container{
+		&:nth-child(1){
+			&::after{
+				display: block;
+				content: '';
+				background-position: 0 -29px;
+				background-image: url('../../dist/img/bg_line.png');
+				padding-bottom: 30px;
+				margin-top: 30px;
+				margin-left: -6%;
+				margin-right: -6%;
+			}
+		}
+	}
+}
+
+.postForm{
+	#v_container{
+		@include inline_block;
+	}
+
+	#code{
+		@include inline_block(120px);
+	}
+
+	textarea{
+		height: 120px;
+	}
 }

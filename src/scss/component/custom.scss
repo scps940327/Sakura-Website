@@ -1,3 +1,10 @@
+$theme-colors: (
+  "main": $second_color
+);
+
+$input-border-color: $second_color;
+$enable-rounded: false;
+
 // Required
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
@@ -6,3 +13,15 @@
 // Optional
 @import "node_modules/bootstrap/scss/grid";
 @import "node_modules/bootstrap/scss/utilities";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/forms";
+@import "node_modules/bootstrap/scss/input-group";
+@import "node_modules/bootstrap/scss/buttons";
+@import "node_modules/bootstrap/scss/modal";
+@import "node_modules/bootstrap/scss/close";
+
+.modal-dialog{
+  padding: 0 5%;
+  max-width: $max_width;
+}
